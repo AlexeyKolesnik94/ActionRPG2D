@@ -14,9 +14,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Attack",
+                    "name": "FastAttack",
                     "type": "Button",
                     "id": "f31d55a2-54b3-49bf-9b57-60c39b04da8e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "HeavyAttack",
+                    "type": "Button",
+                    "id": "ceb8b7ec-2b89-4995-9850-64a7bf54991f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -85,7 +93,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "FastAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9d6b93e9-db0d-402f-b0c4-44426288b406",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HeavyAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

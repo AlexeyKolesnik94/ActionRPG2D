@@ -1,5 +1,6 @@
 using UniRx;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 public class PlayerController : MonoBehaviour {
@@ -9,12 +10,12 @@ public class PlayerController : MonoBehaviour {
     private const float SpeedMove = 10f;
     private Vector2 _moveDirection;
     private bool _isFacingRight;
-    
-
+   
     private Controls _controls;
     private readonly CompositeDisposable _disposable = new CompositeDisposable();
     private static readonly int Speed = Animator.StringToHash("Speed");
-    private static readonly int AttackAnim = Animator.StringToHash("Attack");
+    private static readonly int FastAttackAnim = Animator.StringToHash("FastAttack");
+    private static readonly int HeavyAttackAnim = Animator.StringToHash("HeavyAttack");
     
     
 
@@ -22,7 +23,8 @@ public class PlayerController : MonoBehaviour {
     private void Awake() {
         _controls = new Controls();
 
-        _controls.Player.Attack.performed += context => Attack();
+        _controls.Player.FastAttack.performed += context => FastAttack();
+        _controls.Player.HeavyAttack.performed += context => HeavyAttack();
     }
 
     private void Start() {
@@ -60,10 +62,13 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private void Attack() {
-        animator.SetTrigger(AttackAnim);
+    private void FastAttack() {
+        animator.SetTrigger(FastAttackAnim);
     }
-    
+    private void HeavyAttack() {
+        animator.SetTrigger(HeavyAttackAnim);
+    }
+
     private void Flip() {
         _isFacingRight = !_isFacingRight;
         Vector3 scaler = transform.localScale;
