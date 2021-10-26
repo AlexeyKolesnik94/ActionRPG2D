@@ -167,7 +167,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  _attackController: {fileID: 1864666175}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,17 +250,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1864666175 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3126973908033120986, guid: d526bf175dd04c04e833afb5ad35384d, type: 3}
-  m_PrefabInstance: {fileID: 6984587787525808275}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92a48c54455695f489fba543ea4bd825, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3723186427030690534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,6 +304,10 @@ PrefabInstance:
     - target: {fileID: 3723186426677571949, guid: a44818e8dbd22d94e95c6bc4d3088c6e, type: 3}
       propertyPath: m_Name
       value: forest_goblin
+      objectReference: {fileID: 0}
+    - target: {fileID: 7043778586964576371, guid: a44818e8dbd22d94e95c6bc4d3088c6e, type: 3}
+      propertyPath: health
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a44818e8dbd22d94e95c6bc4d3088c6e, type: 3}
@@ -373,6 +365,10 @@ PrefabInstance:
     - target: {fileID: 5077920306138566781, guid: d3e4c7344c62ecd44997a62ae84229da, type: 3}
       propertyPath: m_Name
       value: ancient goblin
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674960573729612402, guid: d3e4c7344c62ecd44997a62ae84229da, type: 3}
+      propertyPath: health
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3e4c7344c62ecd44997a62ae84229da, type: 3}
@@ -440,6 +436,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5002398059883474907, guid: 1b5ab0686187d1945a3b16e795e87d9a, type: 3}
+      propertyPath: health
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6696505296058976885, guid: 1b5ab0686187d1945a3b16e795e87d9a, type: 3}
       propertyPath: m_Name
       value: cave_goblin
