@@ -9,18 +9,20 @@ public class PlayerController : MonoBehaviour {
     private const float SpeedMove = 10f;
     private Vector2 _moveDirection;
     private bool _isFacingRight;
-   
+
+    private Transform _playerTransform;
     private Controls _controls;
     private readonly CompositeDisposable _disposable = new CompositeDisposable();
     private static readonly int Speed = Animator.StringToHash("Speed");
-
     
+
     private void Awake() {
         _controls = new Controls();
         
     }
 
     private void Start() {
+        _playerTransform = GetComponent<Transform>();
         Observable.EveryUpdate()
             .Subscribe(_ => {
                 _moveDirection = _controls.Player.Move.ReadValue<Vector2>();
@@ -39,14 +41,11 @@ public class PlayerController : MonoBehaviour {
 
 
     private void Move(Vector2 direction) {
-        
-        //MOVE
         float scaledMoveSpeed = SpeedMove * Time.deltaTime;
         Vector3 moveDirection = new Vector3(direction.x, direction.y,0);
         transform.position += moveDirection * scaledMoveSpeed;
         animator.SetFloat(Speed, _moveDirection.sqrMagnitude);
         
-        // FLIP
         switch (_isFacingRight) {
             case false when _moveDirection.x < 0:
             case true when _moveDirection.x > 0:
@@ -57,8 +56,8 @@ public class PlayerController : MonoBehaviour {
     
     private void Flip() {
         _isFacingRight = !_isFacingRight;
-        Vector3 scaler = transform.localScale;
+        Vector3 scaler = _playerTransform.localScale;
         scaler.x *= -1;
-        transform.localScale = scaler;
+        _playerTransform.localScale = scaler;
     }
 }
